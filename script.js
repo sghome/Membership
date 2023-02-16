@@ -8,14 +8,14 @@ const ctx = canvas.getContext('2d')
 const nameInput = document.getElementById('name')
 const downloadBtn = document.getElementById('download-btn')
 
-const img = GIF()
+const img = new GIF()
 
 
 
 image = new Image()
 image.src = 'cert.png'
 
-img.load("GIFurl.gif");
+img.src = 'm.gif'
 
 image.onload = function () {
 	drawImage()
@@ -32,14 +32,14 @@ function imgChange() {
 	if(image.src.indexOf('cert.jpg') > -1)
 	image.src='cert.png';
 	else
-	ctx.drawImage(img.frames[0].image,0,0);
+	img.src='m.gif';
 	image.onload = function(){
 		drawImage()
   };
 
 }
 function drawImage() {
-ctx.drawImage(img, 0, 0)
+ctx.drawImage(img.frames[0].image,0,0);
 
 	ctx.drawImage(image, 0, 0, canvas.width, canvas.height)
 	ctx.font = '55px Sans-Serif'
