@@ -14,7 +14,7 @@ const img = new Image();
 
 image = new Image()
 image.src = 'cert.png'
-img.src = 'b.png'
+img.src = 'm.gif'
 
 image.onload = function () {
 	drawImage()
