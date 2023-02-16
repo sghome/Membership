@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap");
+* {
+  transform-style: preserve-3d;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+  perspective: 440px;
+  overflow: hidden;
+ 
+
+}
+body::before {
+  position: absolute;
+ 
+  height: 100%;
+  width: 200%;
+  font-size: 300px;
+  letter-spacing: -18px;
+  color: white;
+
+  text-transform: uppercase;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(15deg) translatey(-26px);
+ 
+  filter: blur(1.5px);
+  
+}
+
+
+.card {
+  position: relative;
+  width: 320px;
+  height: 540px;
+  margin: 4rem;
+}
+@media screen and (max-width: 500px) {
+  .card {
+    width: 240px;
+    height: 405px;
+  }
+}
+.card .layer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: contain;
+}
+
+
+
+
+
+
+.card .layer-bg {
+  height: 98%;
+  border-radius: 10px;
+  box-shadow: 0 0 140px 2px rgba(144, 238, 144, 0.5);
+  transform: translate3d(0, 30px, -25px) rotatex(4deg);
+}
+.card .layer-bg::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #f4d03f;
+  background-image: linear-gradient(-25deg, #448844 10%, #660066 90%);
+}
+.card .layer-bg::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-image: url(m.gif);
+  background-size: cover;
+  mix-blend-mode: luminosity;
+}
+.card .layer-edge {
+  width: 88%;
+  height: 88%;
+  transform: translate3d(0, 34px, 9px) rotatex(3deg);
+  border: 20px solid white;
+  border-radius: 10px;
+}
