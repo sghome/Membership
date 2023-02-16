@@ -8,7 +8,7 @@ const ctx = canvas.getContext('2d')
 const nameInput = document.getElementById('name')
 const downloadBtn = document.getElementById('download-btn')
 
-const img = new GIF();
+const img = new image()
 
 
 
