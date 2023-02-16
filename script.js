@@ -31,7 +31,7 @@ function imgChange() {
 	if(image.src.indexOf('cert.jpg') > -1)
 	image.src='cert.png';
 	else
-	image.src='b.png';
+	image.src='m.gif';
 	image.onload = function(){
 		drawImage()
   };
