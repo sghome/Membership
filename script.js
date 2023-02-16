@@ -38,7 +38,8 @@ function imgChange() {
 
 }
 function drawImage() {
-ctx.drawImage(img, 0, 0)
+
+	 ctx.drawImage(img.frames[0].image,0,0)
 
 	ctx.drawImage(image, 0, 0, canvas.width, canvas.height)
 	ctx.font = '55px Sans-Serif'
