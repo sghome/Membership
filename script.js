@@ -2,6 +2,11 @@ const canvas = document.getElementById('canvas')
 const ctx = canvas.getContext('2d')
 
 
+var myGif;
+const gifURL = "m.gif";
+
+
+
 
 
 
@@ -12,18 +17,32 @@ const img = new Image();
 
 
 
+
+
+
+setTimeout(()=>{
+    myGif = GIF();                  // creates a new gif  
+    myGif.onerror = function(e){
+       console.log("Gif loading error " + e.type);
+    }
+    myGif.load(gifURL);  
+
+},0); 
+
+
+
+
+
 image = new Image()
 image.src = 'cert.png'
-img.src = 'm.gif'
+
 
 image.onload = function () {
 	drawImage()
 }
 
 
-img.onload = function () {
-	drawImage()
-}
+
 
 
 
@@ -39,7 +58,15 @@ function imgChange() {
 }
 function drawImage() {
 
-	 ctx.drawImage(img.frames[0].image,0,0)
+	 
+	
+	
+     var frame = mod(part.frame ,myGif.frames.length) | 0
+ 
+     drawImage(myGif.frames[frame].image,part.x,part.y,part.scale,part.rot)
+	
+	
+	
 
 	ctx.drawImage(image, 0, 0, canvas.width, canvas.height)
 	ctx.font = '55px Sans-Serif'
