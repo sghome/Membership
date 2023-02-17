@@ -50,7 +50,7 @@ function imgChange() {
 	if(image.src.indexOf('cert.jpg') > -1)
 	image.src='cert.png';
 	else
-	image.src='m.gif';
+	myGif.src='m.gif';
 	image.onload = function(){
 		drawImage()
   };
@@ -58,14 +58,8 @@ function imgChange() {
 }
 function drawImage() {
 
-	 
 	
-	
-     var frame = mod(part.frame ,myGif.frames.length) | 0
- 
-     drawImage(myGif.frames[frame].image,part.x,part.y,part.scale,part.rot)
-	
-	
+	ctx.drawImage(myGif.frames[frame].image, 0, 0, canvas.width, canvas.height)
 	
 
 	ctx.drawImage(image, 0, 0, canvas.width, canvas.height)
